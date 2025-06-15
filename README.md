@@ -1,12 +1,10 @@
-[![Trophy](https://github-profile-trophy.vercel.app/?username=Nubatan10001&margin-w=10&no-frame=true)](https://github.com/ryo-ma/github-profile-trophy)
+<p align="left"> 
+  <img alt="Top Langs" height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Nubatan10001&layout=compact&count_private=true&show_icons=true&theme=onedark" />
+  <img alt="github stats" height="150px" src="https://github-readme-stats.vercel.app/api?username=Nubatan10001&count_private=true&show_icons=true&show_icons=true&theme=onedark" />
+</p>
 
-| ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Nubatan10001&show_icons=true&hide=contribs&count_private=true) | ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=Nubatan10001) |
-|---|---|
-
-| ![Language Count](https://img.shields.io/github/languages/count/Nubatan10001/minkei) | ![Top Language](https://img.shields.io/github/languages/top/Nubatan10001/minkei) |
-|---|---|
-
-> 📌 *This shows the language usage specifically in the `minkei` repository.*
+[![trophy](https://github-profile-trophy.vercel.app/?username=Nubatan10001&theme=onedark&column=7
+)](https://github.com/ryo-ma/github-profile-trophy)
 
 ## 📚 What is minkei?（みんけい！：みんなの経済学！）
 
