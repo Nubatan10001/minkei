@@ -1,0 +1,81 @@
+/* 運営者一覧のスタイル */
+.prof-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+h2 {
+    color: #c75c1e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 各運営者のカード */
+.prof-card {
+    width: 95%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* テキストエリア */
+.prof-text {
+    width: 65%;  /* 少し広げる */
+    padding-left: 10px;  /* 左の余白を少し追加 */
+}
+
+.prof-text h3 {
+    color: #c75c1e;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* インデントのずれを修正 */
+.prof-text p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;  /* 余白をリセット */
+    padding: 0; /* パディングをリセット */
+}
+
+/* リストの点（●）を消す */
+.prof-text ul {
+    list-style-type: none;  /* リストのマーカーを削除 */
+    padding-left: 0;  /* 左の余白をなくす */
+    margin: 0;  /* 上下の余白もリセット */
+}
+
+/* 画像部分 */
+.prof-image {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prof-image img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.placeholder {
+    width: 200px;
+    height: 250px;
+    background-color: #ffccaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #333;
+}

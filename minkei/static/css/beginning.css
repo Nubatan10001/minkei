@@ -1,0 +1,45 @@
+/* 全体のスタイル */
+.beginning-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* タイトルのスタイル（オレンジ＆中央揃え） */
+.beginning-container h2 {
+    text-align: center;
+    color: #c75c1e;
+    margin-bottom: 20px;
+    font-size: 28px; /* タイトルの大きさ調整 */
+}
+
+/* 本文のスタイル */
+.beginning-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 画像のスタイル */
+.beginning-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.beginning-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Markdownのタイトルを左揃え＆オレンジにする */
+.beginning-content h1,
+.beginning-content h2,
+.beginning-content h3,
+.beginning-content h4,
+.beginning-content h5,
+.beginning-content h6 {
+    text-align: left;
+    color: #c75c1e; /* オレンジに変更 */
+    font-weight: bold;
+    margin-left: 0;
+}

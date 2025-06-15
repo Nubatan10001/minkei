@@ -1,0 +1,62 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}ホーム - みんなの経済学！（みんけい！）{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- メインボディ -->
+    <section>
+        <h2>まずはここから！</h2>
+        <div class="button-container">
+            <a href="{% url 'beginning' %}"><button>はじめに・・・</button></a>
+            <a href="{% url 'roadmap' %}"><button>経済学のロードマップ</button></a>
+            <a href="{% url 'intro_econ:intro_econ_list' %}"><button>経済学入門（講義）</button></a>
+        </div>
+    </section>
+
+    <section>
+        <h2>ミクロ経済学</h2>
+        <div class="button-container">
+            <a href="{% url 'intro_microecon:intro_microecon_list' %}"><button>ミクロ経済学 入門（講義）</button></a>
+            <a href="{% url 'advanced_microecon:advanced_microecon_list' %}"><button>ミクロ経済学 応用（講義）</button></a>
+        </div>
+    </section>
+
+    <section>
+        <h2>マクロ経済学</h2>
+        <div class="button-container">
+            <a href="{% url 'intro_macroecon:intro_macroecon_list' %}"><button>マクロ経済学 入門（講義）</button></a>
+            <a href="{% url 'advanced_macroecon:advanced_macroecon_list' %}"><button>マクロ経済学 応用（講義）</button></a>
+        </div>
+    </section>
+
+    <section>
+        <h2>計量経済学 入門</h2>
+        <div class="button-container">
+            <a href="{% url 'intro_metrics:intro_metrics_list' %}"><button>計量経済学 入門（講義）</button></a>
+            <button>計量経済学 応用（講義）</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>経済史 入門</h2>
+        <div class="button-container">
+            <button>経済史 入門（講義）</button>
+            <button>経済史 応用（講義）</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>その他</h2>
+        <div class="button-container">
+            <button>各応用分野について</button>
+            <button>大学で経済学を学ぶ</button>
+            <button>経済学検定について</button>
+            <button>質問・お問い合わせ</button>
+        </div>
+    </section>
+{% endblock %}

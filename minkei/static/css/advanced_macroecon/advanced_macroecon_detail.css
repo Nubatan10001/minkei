@@ -1,0 +1,49 @@
+.article-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-container h1 {
+    text-align: center;
+    color: #c75c1e;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.article-date {
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.article-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+    text-align: left;
+    color: #c75c1e;
+    font-weight: bold;
+    margin-left: 0;
+}
+
+.back-to-list {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-to-list a {
+    text-decoration: none;
+    color: #c75c1e;
+    font-weight: bold;
+    font-size: 16px;
+}

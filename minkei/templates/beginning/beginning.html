@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}{{ page.title }} - みんなの経済学！{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/beginning.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="beginning-container">
+        <h2>{{ page.title }}</h2>
+        <div class="beginning-content">
+            {{ content_html|safe }}
+        </div>
+        {% if page.image %}
+            <div class="beginning-image">
+                <img src="{{ page.image.url }}" alt="関連画像">
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

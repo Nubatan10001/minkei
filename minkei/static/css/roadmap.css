@@ -1,0 +1,42 @@
+/* 全体のスタイル */
+.roadmap-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* タイトル */
+.roadmap-container h2 {
+    text-align: center;
+    color: #c75c1e;
+    margin-bottom: 20px;
+}
+
+/* 本文のスタイル */
+.roadmap-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 画像のスタイル */
+.roadmap-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.roadmap-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Markdownのタイトルを左揃えにする */
+.roadmap-content h1,
+.roadmap-content h2,
+.roadmap-content h3,
+.roadmap-content h4,
+.roadmap-content h5,
+.roadmap-content h6 {
+    text-align: left; /* 左揃え */
+    margin-left: 0; /* 左の余白を統一 */
+}

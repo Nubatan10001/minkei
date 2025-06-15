@@ -1,0 +1,50 @@
+/* 記事一覧のコンテナ */
+.article-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 50px auto;
+}
+
+/* 見出しのスタイル */
+.article-list-title {
+    color: #c75c1e;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+/* 記事カードのデザイン */
+.article-card {
+    display: block;
+    width: 90%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* ホバー時のエフェクト */
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 記事タイトル */
+.article-card h3 {
+    color: #c75c1e;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* 投稿日 */
+.article-card .article-meta {
+    font-size: 14px;
+    color: #666;
+}

@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}{{ article.title }} - みんなの経済学！{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/intro_macroecon/intro_macroecon_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="article-container">
+        <h1>{{ article.title }}</h1>
+        <p class="article-date">投稿日: {{ article.published_date|date:"Y年m月d日" }}</p>
+        <div class="article-content">
+            {{ article.content|safe }}
+        </div>
+        <div class="back-to-list">
+            <a href="{% url 'intro_macroecon:intro_macroecon_list' %}">講義一覧に戻る</a>
+        </div>
+    </div>
+{% endblock %}

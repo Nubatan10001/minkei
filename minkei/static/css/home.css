@@ -1,0 +1,63 @@
+/* メインボディー */
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #c75c1e;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.button-container button {
+    background-color: #ff8c42;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #ff6b00;
+}
+
+/* 各セクションのスタイル */
+section {
+    margin: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #c75c1e;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.button-container button {
+    background-color: #ff8c42;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #ff6b00;
+}

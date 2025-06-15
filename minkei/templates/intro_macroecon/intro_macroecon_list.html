@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}マクロ経済学 入門（講義）一覧 - みんなの経済学！{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/intro_macroecon/intro_macroecon_list.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="article-list-title">マクロ経済学 入門（講義）</h1>
+
+    <div class="article-list">
+        {% for article in articles %}
+            <a href="{% url 'intro_macroecon:intro_macroecon_article' article.slug %}" class="article-card">
+                <div class="article-card-content">
+                    <h3>{{ article.title }}</h3>  
+                    <p class="article-meta">投稿日: {{ article.published_date|date:"Y年m月d日" }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

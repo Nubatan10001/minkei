@@ -1,0 +1,44 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}運営者一覧 - みんなの経済学！{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/prof.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="prof-container">
+        <h2>運営者 Profile</h2>
+
+        {% for prof in profs %}
+            <div class="prof-card">
+                <div class="prof-text">
+                    <h3> 名前 </h3>
+                    <p>{{ prof.name }}</p>
+
+                    <h3> 経歴 </h3>
+                    <ul>
+                        <p>{{ prof.biography|linebreaks }}</p>
+                    </ul>
+
+                    <h3> 専攻 </h3>
+                    <p>{{ prof.specialty }}</p>
+
+                    {% if prof.message %}
+                        <h3> ひとこと </h3>
+                        <p>{{ prof.message }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="prof-image">
+                    {% if prof.profile_image %}
+                        <img src="{{ prof.profile_image.url }}" alt="プロフィール画像">
+                    {% else %}
+                        <div class="placeholder">No Image</div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
