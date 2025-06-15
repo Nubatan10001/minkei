@@ -32,7 +32,7 @@
 そうして生まれたのが、この Webサイト **『みんなの経済学！（みんけい！）』** です。  
 主にDjangoを活用して、誰もが経済学を気軽に学べる環境を目指して開発を進めています。   
 
-開発環境は、requirements.txtに記載してあります。
+開発環境は、"minkei/minkei/requirements.txt" に記載してあります。
 
 Developed by [Nubatan10001](https://github.com/Nubatan10001).
 
