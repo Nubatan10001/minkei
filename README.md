@@ -1,4 +1,4 @@
-[![Trophy](https://github-profile-trophy.vercel.app/?username=Nubatan10001&margin-w=10&no-frame=true)](https://github.com/Nubatan10001/github-profile-trophy)
+[![Trophy](https://github-profile-trophy.vercel.app/?username=Nubatan10001&margin-w=10&no-frame=true)](https://github.com/ryo-ma/github-profile-trophy)
 
 | ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Nubatan10001&show_icons=true&hide=contribs&count_private=true) | ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=Nubatan10001) |
 |---|---|
