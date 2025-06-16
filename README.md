@@ -34,6 +34,10 @@
 
 開発環境は、"minkei/minkei/requirements.txt" に記載してあります。
 
+---
+## 記事執筆ブランチについて
+今回の開発において、まだ私自身データベースについて学習中の身であるため、mainブランチで直接書き込んでいます。
+
 Developed by [Nubatan10001](https://github.com/Nubatan10001).
 
 <!-- Add project description / usage instructions / demo link below -->
