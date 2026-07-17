@@ -11,34 +11,26 @@
     <div class="prof-container">
         <h2>運営者 Profile</h2>
 
-        {% for prof in profs %}
-            <div class="prof-card">
-                <div class="prof-text">
-                    <h3>名前</h3>
-                    <p>{{ prof.name }}</p>
+        <div class="prof-card">
+            <div class="prof-text">
+                <h3>名前</h3>
+                <p>Nubatan</p>
 
-                    <h3>経歴</h3>
-                    <div>{{ prof.biography|linebreaks }}</div>
+                <h3>経歴</h3>
+                <p>法政大学経済学部経済学科 卒業</p>
+                <p>データエンジニア</p>
+                <p>ITコンサルタント</p>
 
-                    <h3>専攻</h3>
-                    <p>{{ prof.specialty }}</p>
+                <h3>専攻</h3>
+                <p>統計学, 計量経済学</p>
 
-                    {% if prof.message %}
-                        <h3>ひとこと</h3>
-                        <p>{{ prof.message }}</p>
-                    {% endif %}
-                </div>
-
-                <div class="prof-image">
-                    {% if prof.profile_image %}
-                        <img src="{{ prof.profile_image.url }}" alt="プロフィール画像">
-                    {% else %}
-                        <div class="placeholder">No Image</div>
-                    {% endif %}
-                </div>
+                <h3>ひとこと</h3>
+                <p>だれでも経済学を学べるwebサイト「みんなの経済学！（みんけい！）」を運営しています！</p>
             </div>
-        {% empty %}
-            <p class="empty-message">管理画面からプロフィールを登録すると、このページに表示されます。</p>
-        {% endfor %}
+
+            <div class="prof-image">
+                <img src="{% static 'img/profile_motorcycle.jpg' %}" alt="プロフィール画像">
+            </div>
+        </div>
     </div>
 {% endblock %}
