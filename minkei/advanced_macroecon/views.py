@@ -1,12 +1,17 @@
-from django.shortcuts import render, get_object_or_404
+from minkei.article_views import render_article_detail, render_article_list
 from .models import MacroAdvancedArticle
-import markdown
 
 def MacroAdvancedListView(request):
-    articles = MacroAdvancedArticle.objects.all().order_by("published_date")  # 古い順
-    return render(request, 'advanced_macroecon/advanced_macroecon_list.html', {'articles': articles})
+    return render_article_list(
+        request,
+        model=MacroAdvancedArticle,
+        template_name='advanced_macroecon/advanced_macroecon_list.html',
+    )
 
 def MacroAdvancedDetailView(request, slug):
-    article = get_object_or_404(MacroAdvancedArticle, slug=slug)
-    article.content = markdown.markdown(article.content)
-    return render(request, 'advanced_macroecon/advanced_macroecon_detail.html', {'article': article})
+    return render_article_detail(
+        request,
+        model=MacroAdvancedArticle,
+        slug=slug,
+        template_name='advanced_macroecon/advanced_macroecon_detail.html',
+    )

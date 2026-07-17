@@ -1,13 +1,17 @@
-# intro_macroecon/views.py
-from django.shortcuts import render, get_object_or_404
+from minkei.article_views import render_article_detail, render_article_list
 from .models import MacroEconArticle
-import markdown
 
 def MacroEconArticleListView(request):
-    articles = MacroEconArticle.objects.all().order_by("published_date")
-    return render(request, 'intro_macroecon/intro_macroecon_list.html', {'articles': articles})
+    return render_article_list(
+        request,
+        model=MacroEconArticle,
+        template_name='intro_macroecon/intro_macroecon_list.html',
+    )
 
 def IntroMacroEconArticle(request, slug):
-    article = get_object_or_404(MacroEconArticle, slug=slug)
-    article.content = markdown.markdown(article.content)
-    return render(request, 'intro_macroecon/intro_macroecon_detail.html', {'article': article})
+    return render_article_detail(
+        request,
+        model=MacroEconArticle,
+        slug=slug,
+        template_name='intro_macroecon/intro_macroecon_detail.html',
+    )

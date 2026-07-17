@@ -8,55 +8,48 @@
 {% endblock %}
 
 {% block content %}
-    <!-- メインボディ -->
-    <section>
-        <h2>まずはここから！</h2>
-        <div class="button-container">
-            <a href="{% url 'beginning' %}"><button>はじめに・・・</button></a>
-            <a href="{% url 'roadmap' %}"><button>経済学のロードマップ</button></a>
-            <a href="{% url 'intro_econ:intro_econ_list' %}"><button>経済学入門（講義）</button></a>
+<div class="home-shell">
+    <section class="home-intro" aria-labelledby="home-title">
+        <div>
+            <p class="home-kicker">Undergraduate Economics Learning Map</p>
+            <h1 id="home-title">経済学を、迷わず体系的に。</h1>
+            <p>
+                入門からミクロ・マクロ・計量まで、学部レベルの経済学を順番にたどれる学習サイトです。
+                まずはロードマップで全体像を掴み、興味のある講義へ進んでください。
+            </p>
+        </div>
+        <div class="home-actions">
+            <a href="{% url 'roadmap' %}" class="primary-link">ロードマップを見る</a>
+            <a href="{% url 'intro_econ:intro_econ_list' %}" class="secondary-link">経済学入門から始める</a>
         </div>
     </section>
 
-    <section>
-        <h2>ミクロ経済学</h2>
-        <div class="button-container">
-            <a href="{% url 'intro_microecon:intro_microecon_list' %}"><button>ミクロ経済学 入門（講義）</button></a>
-            <a href="{% url 'advanced_microecon:advanced_microecon_list' %}"><button>ミクロ経済学 応用（講義）</button></a>
-        </div>
-    </section>
-
-    <section>
-        <h2>マクロ経済学</h2>
-        <div class="button-container">
-            <a href="{% url 'intro_macroecon:intro_macroecon_list' %}"><button>マクロ経済学 入門（講義）</button></a>
-            <a href="{% url 'advanced_macroecon:advanced_macroecon_list' %}"><button>マクロ経済学 応用（講義）</button></a>
-        </div>
-    </section>
-
-    <section>
-        <h2>計量経済学</h2>
-        <div class="button-container">
-            <a href="{% url 'intro_metrics:intro_metrics_list' %}"><button>計量経済学 入門（講義）</button></a>
-            <button>計量経済学 応用（講義）</button>
-        </div>
-    </section>
-
-    <section>
-        <h2>経済史</h2>
-        <div class="button-container">
-            <button>経済史 入門（講義）</button>
-            <button>経済史 応用（講義）</button>
-        </div>
-    </section>
-
-    <section>
-        <h2>その他</h2>
-        <div class="button-container">
-            <button>各応用分野について</button>
-            <button>大学で経済学を学ぶ</button>
-            <button>経済学検定について</button>
-            <button>質問・お問い合わせ</button>
-        </div>
-    </section>
+    <div class="course-sections">
+        {% for section in course_sections %}
+            <section class="course-section" aria-labelledby="section-{{ forloop.counter }}">
+                <div class="section-heading">
+                    <h2 id="section-{{ forloop.counter }}">{{ section.title }}</h2>
+                    <p>{{ section.description }}</p>
+                </div>
+                <div class="course-grid">
+                    {% for item in section.items %}
+                        {% if item.url_name %}
+                            <a href="{% url item.url_name %}" class="course-card">
+                                <span class="course-label">{{ item.label }}</span>
+                                <strong>{{ item.title }}</strong>
+                                <span>{{ item.description }}</span>
+                            </a>
+                        {% else %}
+                            <span class="course-card course-card-disabled" aria-disabled="true">
+                                <span class="course-label">{{ item.label }}</span>
+                                <strong>{{ item.title }}</strong>
+                                <span>{{ item.description }}</span>
+                            </span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

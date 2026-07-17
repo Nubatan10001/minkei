@@ -1,0 +1,36 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}検索結果 - みんなの経済学！（みんけい！）{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="home-shell">
+    <section class="search-results-header">
+        <p class="home-kicker">Search</p>
+        <h1>検索結果</h1>
+        {% if query %}
+            <p>「{{ query }}」に一致する講義記事を表示しています。</p>
+        {% else %}
+            <p>キーワードを入力すると、講義タイトルと本文から検索できます。</p>
+        {% endif %}
+    </section>
+
+    <div class="search-results-list">
+        {% for result in results %}
+            <a href="{% url result.url_name result.slug %}" class="search-result-card">
+                <span class="course-label">{{ result.category }}</span>
+                <strong>{{ result.title }}</strong>
+                <span>投稿日: {{ result.published_date|date:"Y年m月d日" }}</span>
+            </a>
+        {% empty %}
+            {% if query %}
+                <p class="empty-message">一致する講義記事はまだありません。</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

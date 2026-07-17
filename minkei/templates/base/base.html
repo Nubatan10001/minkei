@@ -10,40 +10,45 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <!-- ヘッダー1段目 -->
     <header class="header-top">
-        <h1><a href="{% url 'home:home' %}">みんなの経済学！（みんけい！）</a></h1>
+        <a href="{% url 'home:home' %}" class="site-brand">
+            <span class="site-brand-main">みんなの経済学！</span>
+            <span class="site-brand-sub">みんけい！</span>
+        </a>
         <nav class="header-nav">
             <a href="{% url 'prof' %}" class="button">運営者 Prof.</a>
             <a href="#" class="button">個人ブログ</a>
-            <a href="https://x.com/Nubatan10001" target="_blank"><img src="{% static 'img/x_icon.png' %}" alt="X"></a>
-            <a href="https://note.com/Nubatan10001" target="_blank"><img src="{% static 'img/note_icon.png' %}" alt="note"></a>
-            <a href="https://github.com/Nubatan10001/minkei" target="_blank"><img src="{% static 'img/github_icon.png' %}" alt="GitHub"></a>
+            <a href="https://x.com/Nubatan10001" target="_blank" rel="noopener noreferrer" class="icon-link"><img src="{% static 'img/x_icon.png' %}" alt="X"></a>
+            <a href="https://note.com/Nubatan10001" target="_blank" rel="noopener noreferrer" class="icon-link"><img src="{% static 'img/note_icon.png' %}" alt="note"></a>
+            <a href="https://github.com/Nubatan10001/minkei" target="_blank" rel="noopener noreferrer" class="icon-link"><img src="{% static 'img/github_icon.png' %}" alt="GitHub"></a>
         </nav>
     </header>
 
-    <!-- ヘッダー2段目 -->
     <div class="header-bottom">
-        <div class="search-box">
-            <input type="text" placeholder="検索">
-            <button>検索</button>
-        </div>
+        <nav class="course-nav" aria-label="主要ページ">
+            <a href="{% url 'beginning' %}">はじめに</a>
+            <a href="{% url 'roadmap' %}">ロードマップ</a>
+            <a href="{% url 'intro_econ:intro_econ_list' %}">経済学入門</a>
+        </nav>
+        <form action="{% url 'home:search' %}" method="get" class="search-box" role="search">
+            <label class="sr-only" for="site-search">サイト内検索</label>
+            <input id="site-search" type="search" name="q" value="{{ request.GET.q }}" placeholder="講義名・キーワード">
+            <button type="submit">検索</button>
+        </form>
     </div>
     
-    <!-- コンテンツブロック -->
     <main>
         {% block content %}
         {% endblock %}
     </main>
 
-    <!-- フッター -->
     <footer>
         <nav class="footer-links">
-            <a href="#">サイト管理者用ページ</a> |
-            <a href="#">参考文献一覧</a> |
-            <a href="#">免責事項</a> |
-            <a href="#">意見について</a> |
-            <a href="#">お問い合わせ</a> |
+            <a href="{% url 'admin:index' %}">サイト管理者用ページ</a>
+            <a href="#">参考文献一覧</a>
+            <a href="#">免責事項</a>
+            <a href="#">意見について</a>
+            <a href="#">お問い合わせ</a>
             <a href="#">その他</a>
         </nav>
         <p>© 2025 みんなの経済学！（みんけい！）</p>

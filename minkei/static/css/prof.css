@@ -1,81 +1,79 @@
-/* 運営者一覧のスタイル */
 .prof-container {
-    max-width: 1200px;
+    width: min(1080px, calc(100% - 36px));
     margin: 0 auto;
-    padding: 40px;
+    padding: 34px 0 20px;
 }
 
-h2 {
-    color: #c75c1e;
-    text-align: center;
-    margin-bottom: 20px;
+.prof-container h2 {
+    margin: 0 0 22px;
+    color: var(--color-brand-dark);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.3;
 }
 
-/* 各運営者のカード */
 .prof-card {
-    width: 95%;
-    max-width: 1100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-/* テキストエリア */
-.prof-text {
-    width: 65%;  /* 少し広げる */
-    padding-left: 10px;  /* 左の余白を少し追加 */
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 28px;
+    align-items: start;
+    padding: clamp(20px, 4vw, 34px);
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
 }
 
 .prof-text h3 {
-    color: #c75c1e;
-    font-size: 18px;
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
-
-/* インデントのずれを修正 */
-.prof-text p {
+    margin: 20px 0 6px;
+    color: var(--color-brand-dark);
     font-size: 16px;
-    color: #333;
-    margin: 0;  /* 余白をリセット */
-    padding: 0; /* パディングをリセット */
 }
 
-/* リストの点（●）を消す */
-.prof-text ul {
-    list-style-type: none;  /* リストのマーカーを削除 */
-    padding-left: 0;  /* 左の余白をなくす */
-    margin: 0;  /* 上下の余白もリセット */
+.prof-text h3:first-child {
+    margin-top: 0;
 }
 
-/* 画像部分 */
+.prof-text p {
+    margin: 0;
+    color: var(--color-ink);
+}
+
 .prof-image {
-    width: 35%;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-.prof-image img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
+.prof-image img,
+.placeholder {
+    width: min(100%, 220px);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius);
 }
 
 .placeholder {
-    width: 200px;
-    height: 250px;
-    background-color: #ffccaa;
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    font-size: 18px;
-    color: #333;
+    justify-content: center;
+    color: var(--color-muted);
+    background: #fff1e5;
+    border: 1px solid var(--color-line);
+}
+
+.empty-message {
+    padding: 18px;
+    color: var(--color-muted);
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+}
+
+@media (max-width: 720px) {
+    .prof-card {
+        grid-template-columns: 1fr;
+    }
+
+    .prof-image {
+        justify-content: flex-start;
+    }
 }

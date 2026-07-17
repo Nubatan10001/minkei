@@ -1,12 +1,17 @@
-from django.shortcuts import render, get_object_or_404
+from minkei.article_views import render_article_detail, render_article_list
 from .models import MicroEconArticle
-import markdown
 
 def MicroEconArticleListView(request):
-    articles = MicroEconArticle.objects.all().order_by("published_date")  # 古い順に並び替え
-    return render(request, 'intro_microecon/intro_microecon_list.html', {'articles': articles})
+    return render_article_list(
+        request,
+        model=MicroEconArticle,
+        template_name='intro_microecon/intro_microecon_list.html',
+    )
 
 def MicroEconArticleDetail(request, slug):
-    article = get_object_or_404(MicroEconArticle, slug=slug)
-    article.content = markdown.markdown(article.content)
-    return render(request, 'intro_microecon/intro_microecon_detail.html', {'article': article})
+    return render_article_detail(
+        request,
+        model=MicroEconArticle,
+        slug=slug,
+        template_name='intro_microecon/intro_microecon_detail.html',
+    )
