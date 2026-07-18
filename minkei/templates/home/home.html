@@ -7,6 +7,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 {% endblock %}
 
+{% block breadcrumbs %}
+    <span aria-current="page">ホーム</span>
+{% endblock %}
+
 {% block content %}
 <div class="home-shell">
     <section class="home-intro" aria-labelledby="home-title">
@@ -51,5 +55,27 @@
             </section>
         {% endfor %}
     </div>
+
+    <section class="site-news" aria-labelledby="site-news-title">
+        <div class="section-heading">
+            <h2 id="site-news-title">更新履歴</h2>
+            <p>サイトの追加・修正のお知らせです。</p>
+        </div>
+        <div class="news-list">
+            {% for news in news_items %}
+                <article class="news-card">
+                    <time datetime="{{ news.published_date|date:'Y-m-d' }}">{{ news.published_date|date:"Y年m月d日" }}</time>
+                    <div>
+                        <h3>{{ news.title }}</h3>
+                        {% if news.body %}
+                            <p>{{ news.body|linebreaksbr }}</p>
+                        {% endif %}
+                    </div>
+                </article>
+            {% empty %}
+                <p class="empty-message">更新履歴はまだありません。</p>
+            {% endfor %}
+        </div>
+    </section>
 </div>
 {% endblock %}

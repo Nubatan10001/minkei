@@ -7,6 +7,14 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/intro_macroecon/intro_macroecon_detail.css' %}">
 {% endblock %}
 
+{% block breadcrumbs %}
+    <a href="{% url 'home:home' %}">ホーム</a>
+    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+    <a href="{% url 'intro_macroecon:intro_macroecon_list' %}">マクロ経済学 入門（講義）</a>
+    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+    <span aria-current="page">{{ article.title }}</span>
+{% endblock %}
+
 {% block content %}
     <div class="article-container">
         <h1>{{ article.title }}</h1>

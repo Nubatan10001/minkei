@@ -25,10 +25,10 @@
     </header>
 
     <div class="header-bottom">
-        <nav class="course-nav" aria-label="主要ページ">
-            <a href="{% url 'beginning' %}">はじめに</a>
-            <a href="{% url 'roadmap' %}">ロードマップ</a>
-            <a href="{% url 'intro_econ:intro_econ_list' %}">経済学入門</a>
+        <nav class="breadcrumb" aria-label="現在位置">
+            {% block breadcrumbs %}
+                <span aria-current="page">ホーム</span>
+            {% endblock %}
         </nav>
         <form action="{% url 'home:search' %}" method="get" class="search-box" role="search">
             <label class="sr-only" for="site-search">サイト内検索</label>

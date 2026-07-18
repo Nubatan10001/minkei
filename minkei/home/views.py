@@ -7,6 +7,7 @@ from intro_econ.models import EconArticle
 from intro_macroecon.models import MacroEconArticle
 from intro_metrics.models import MetricsArticle
 from intro_microecon.models import MicroEconArticle
+from .models import SiteNews
 
 
 COURSE_SECTIONS = [
@@ -125,7 +126,15 @@ SEARCH_TARGETS = [
 
 
 def home(request):
-    return render(request, 'home/home.html', {"course_sections": COURSE_SECTIONS})
+    news_items = SiteNews.objects.filter(is_published=True)[:5]
+    return render(
+        request,
+        'home/home.html',
+        {
+            "course_sections": COURSE_SECTIONS,
+            "news_items": news_items,
+        },
+    )
 
 
 def search(request):

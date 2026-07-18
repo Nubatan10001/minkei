@@ -7,6 +7,14 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/advanced_microecon/advanced_microecon_detail.css' %}">
 {% endblock %}
 
+{% block breadcrumbs %}
+    <a href="{% url 'home:home' %}">ホーム</a>
+    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+    <a href="{% url 'advanced_microecon:advanced_microecon_list' %}">ミクロ経済学 応用（講義）</a>
+    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+    <span aria-current="page">{{ article.title }}</span>
+{% endblock %}
+
 {% block content %}
 <div class="article-container">
     <h1>{{ article.title }}</h1>
