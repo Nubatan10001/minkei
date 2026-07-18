@@ -8,7 +8,7 @@
             1
         );
         const progress = window.scrollY / scrollMax;
-        const shift = -7 + progress * 14;
+        const shift = -12 + progress * 24;
 
         root.style.setProperty("--scenery-shift", `${shift.toFixed(2)}vh`);
         ticking = false;
